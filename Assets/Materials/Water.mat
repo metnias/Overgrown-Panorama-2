@@ -15,8 +15,9 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -49,6 +50,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: b9f17290780379840bcaf20e70996491, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -59,10 +64,20 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BUILTIN_AlphaClip: 0
+    - _BUILTIN_Blend: 0
+    - _BUILTIN_CullMode: 2
+    - _BUILTIN_DstBlend: 0
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
+    - _BUILTIN_SrcBlend: 1
+    - _BUILTIN_Surface: 0
+    - _BUILTIN_ZTest: 4
+    - _BUILTIN_ZWrite: 1
+    - _BUILTIN_ZWriteControl: 0
     - _BumpScale: 1
     - _Cutoff: 0.5
+    - _Depth: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -72,12 +87,34 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Power: 0.48
+    - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _Speed: 0.02
     - _SrcBlend: 1
+    - _Strength: 0.05
+    - _Tiling: 30
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.56376827, g: 0.9155091, b: 0.9716981, a: 1}
+    - _DepthColor: {r: 0.09812213, g: 0.46226418, b: 0.45188707, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MainColor: {r: 0.22272158, g: 0.32747507, b: 0.8584906, a: 0}
+    - _ShallowColor: {r: 0.5424528, g: 1, b: 0.9357829, a: 0}
+    - _SurfaceColor: {r: 0.4978195, g: 0.9246561, b: 0.9339623, a: 0}
   m_BuildTextureStacks: []
+--- !u!114 &3333255145442244624
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639247ca83abc874e893eb93af2b5e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 0
