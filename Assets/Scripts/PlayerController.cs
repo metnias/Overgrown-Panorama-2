@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Range(0f, 20f)]
     private float maxSpeed = 5f;
 
-
     [SerializeField]
     private float speed = 0f;
 
@@ -14,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim = null;
     private Rigidbody[] rBodys = null;
     private CharacterController charCtrler = null;
+
 
     private void Awake()
     {
@@ -62,23 +62,23 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //FirstPersonMoving();
-        ThirdPersonMoving();
+        MoveUpdate();
     }
 
-    /*
     private float velY;
 
-    private void FirstPersonMoving()
+    private void MoveUpdate()
     {
         var camForward = Camera.main.transform.forward;
         camForward.y = 0f; camForward.Normalize();
+        //float dir = Mathf.Atan2(camForward.z, camForward.x) * Mathf.Rad2Deg;
+        skinCtrler.transform.forward = camForward;
 
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
         var inputVec = new Vector2(h, v);
         inputVec = Vector2.ClampMagnitude(inputVec, 1f);
-        inputVec *= speed * 5f * Time.fixedDeltaTime;
+        inputVec *= speed * Time.fixedDeltaTime;
 
         var vec = Vector3.zero;
         vec.x = camForward.x * inputVec.y + camForward.z * inputVec.x;
@@ -87,17 +87,7 @@ public class PlayerController : MonoBehaviour
         vec.y = velY;
         charCtrler.Move(vec);
     }
-    */
 
-    private void ThirdPersonMoving()
-    {
-        Vector3 dir = new(Input.GetAxisRaw("Horizontal"),
-                    charCtrler.isGrounded ? 0f : Physics.gravity.y,
-                    Input.GetAxisRaw("Vertical"));
-        dir = Vector3.ClampMagnitude(dir, 1f);
-        dir *= speed * 5f * Time.fixedDeltaTime;
-        charCtrler.Move(dir);
-    }
 
 #if RAGDOLL
     private void ToggleRagdoll(bool enable)
