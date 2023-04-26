@@ -16,7 +16,7 @@ public class ParticleDampener : MonoBehaviour
     private void Start()
     {
         pSystem = GetComponent<ParticleSystem>();
-        player = PlayerController.Instance().gameObject.transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update()
